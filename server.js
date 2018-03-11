@@ -22,9 +22,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-});
+
 
 app.use(express.static(__dirname + '/public'));
 
@@ -57,4 +55,8 @@ app.get('/bad', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is up on port ${port}.`);
+});
+
+app.use((req, res, next) => {
+  res.render('maintenance.hbs');
 });
